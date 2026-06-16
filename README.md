@@ -1,6 +1,38 @@
 # 🔍 AI PR Reviewer
 
-LangGraph + Claude API로 만든 GitHub PR 자동 코드 리뷰 에이전트입니다.
+LangGraph + Claude API로 만든 GitHub PR 자동 코드 리뷰 에이전트 토이 프로젝트
+
+## 실행화면 및 결과
+
+### 1. UI 초기 화면
+PR URL 입력, GitHub 자동 등록 여부 선택, `.py`와 같은 파일 확장자 필터 설정 후 리뷰를 시작할 수 있습니다.
+
+![리뷰시작UI](images/리뷰시작UI.png)
+
+### 2. 리뷰 대상 PR 확인
+실제 GitHub PR 페이지에서 리뷰할 PR URL을 확인합니다. 8개 파일이 변경된 `feature/add-batch-history-ui` 브랜치의 PR입니다.
+
+![리뷰시작Git](images/리뷰시작Git.png)
+
+### 3. LangGraph 에이전트 분석 중
+리뷰 시작 버튼을 누르면 LangGraph 에이전트가 GitHub API를 호출해 PR 정보와 diff를 수집하고 Claude가 분석을 진행합니다.
+
+![분석중](images/분석중.png)
+
+### 4. 리뷰 완료 및 결과 다운로드
+분석이 완료되면 GitHub PR에 코멘트가 자동 등록되고, 리뷰 결과를 `.md` 파일로 다운로드할 수 있습니다.
+
+![완료UI](images/완료UI.png)
+
+### 5. GitHub PR에 자동 등록된 리뷰 코멘트
+Claude가 작성한 리뷰가 PR 요약, 잘된 점, 버그, 코드 품질, 보안, 성능, 총평 구조로 GitHub PR 코멘트에 직접 등록됩니다.
+
+![리뷰완료Git](images/리뷰완료Git.png)
+
+### 6. Anthropic Console — Claude API 실제 사용 확인
+Anthropic Console에서 이번 달 API 사용량($0.01)을 확인할 수 있으며, Claude API가 실제로 호출되었음을 증명합니다.
+
+![클로드토큰](images/클로드토큰.png)
 
 ## 주요 기능
 
